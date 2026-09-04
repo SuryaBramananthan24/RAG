@@ -73,7 +73,6 @@ def get_image_caption(element):
         image = PILImage.open(
             io.BytesIO(image_bytes)
         )
-
         result = image_captioner(image)
 
         if result:
