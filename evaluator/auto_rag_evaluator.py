@@ -8,7 +8,6 @@ from auto_retrieval_pipeline import (
     URL_COLLECTION
 )
 
-
 embedding_model = HuggingFaceEmbeddings()
 
 
