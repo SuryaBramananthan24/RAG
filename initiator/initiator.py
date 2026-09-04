@@ -6,12 +6,8 @@ from auto_rag_evaluator import run_evaluation
 
 BASE_DIR = Path(**file**).resolve().parent.parent
 
-FILES_TO_INGEST = [
-BASE_DIR / "data" / "documents" / "rag.pdf"
-]
-URLS_TO_INGEST = [
-"https://www.preparationtech.com/post/black-tech-history-month-2021"
-]
+FILES_TO_INGEST = [BASE_DIR / "data" / "documents" / "rag.pdf"]
+URLS_TO_INGEST = ["https://www.preparationtech.com/post/black-tech-history-month-2021"]
 RUN_RETRIEVAL_TEST = True
 RUN_EVALUATION = True
 
@@ -20,7 +16,7 @@ print("\n" + "=" * 60)
 print("AUTOMATED RAG PIPELINE")
 print("=" * 60)
 
-```
+
 valid_files = []
 
 for file_path in FILES_TO_INGEST:
@@ -83,7 +79,6 @@ if RUN_EVALUATION:
 print("\n" + "=" * 60)
 print("PIPELINE COMPLETED")
 print("=" * 60)
-```
 
 if **name** == "**main**":
 main()
