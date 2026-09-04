@@ -29,7 +29,6 @@ persist_directory=PERSIST_DIRECTORY
 def retrieve(query, collection_name, k=5):
 vector_store = get_vector_store(collection_name)
 
-```
 retriever = vector_store.as_retriever(
     search_type="mmr",
     search_kwargs={
@@ -42,13 +41,13 @@ retriever = vector_store.as_retriever(
 print(f"\nSearching '{collection_name}' collection...")
 
 return retriever.invoke(query)
-```
+
 
 def generate_answer(query, documents):
 if not documents:
 return "I could not find any relevant information in the provided documents."
 
-```
+
 context = "\n\n".join(
     document.page_content
     for document in documents
@@ -77,7 +76,7 @@ Answer:
 """
 )
 
-```
+
 chain = prompt | model | StrOutputParser()
 
 return chain.invoke(
@@ -86,7 +85,7 @@ return chain.invoke(
         "question": query
     }
 )
-```
+
 
 def retrieve_and_answer(query, collection_name, k=5):
 documents = retrieve(
@@ -95,11 +94,11 @@ collection_name=collection_name,
 k=k
 )
 
-```
+
 answer = generate_answer(
     query=query,
     documents=documents
 )
 
 return answer, documents
-```
+
