@@ -12,24 +12,19 @@ from langchain_core.documents import Document
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_chroma import Chroma
 
-
 PERSIST_DIRECTORY = "ChromaDB"
-
 PDF_COLLECTION = "Pdf"
 URL_COLLECTION = "Url"
-
 MAX_CHARACTERS = 600
 OVERLAP = 75
 
 
 embedding_model = HuggingFaceEmbeddings()
-
 image_captioner = pipeline(
     "image-to-text",
     model="nlpconnect/vit-gpt2-image-captioning",
     device=-1
 )
-
 
 def get_vector_store(collection_name):
     return Chroma(
@@ -84,9 +79,8 @@ def get_image_caption(element):
         if result:
             return result[0]["generated_text"]
 
-    except Exception as error:
+    except Exception as error: 
         print(f"Unable to process image: {error}")
-
     return None
 
 
