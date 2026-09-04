@@ -9,11 +9,9 @@ BASE_DIR = Path(**file**).resolve().parent.parent
 FILES_TO_INGEST = [
 BASE_DIR / "data" / "documents" / "rag.pdf"
 ]
-
 URLS_TO_INGEST = [
 "https://www.preparationtech.com/post/black-tech-history-month-2021"
 ]
-
 RUN_RETRIEVAL_TEST = True
 RUN_EVALUATION = True
 
